@@ -16,8 +16,8 @@
   .main-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Modifié: space-between au lieu de flex-end */
-    gap: var(--spacing-lg); /* Modifié: réduction de l'espacement */
+    justify-content: space-between; 
+    gap: var(--spacing-lg);
     flex: 1;
   }
 
@@ -25,13 +25,13 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-lg);
-    margin: 0; /* Ajouté: supprime la marge par défaut des listes */
-    padding: 0; /* Ajouté: supprime le padding par défaut des listes */
-    list-style-type: none; /* Ajouté: supprime les puces de liste */
+    margin: 0;
+    padding: 0; 
+    list-style-type: none; 
   }
 
   .nav-links li {
-    margin: 0; /* Ajouté: assure qu'il n'y a pas de marge sur les éléments de liste */
+    margin: 0;
   }
 
   .nav-links a {
@@ -39,7 +39,7 @@
     font-weight: 500;
     position: relative;
     padding: 0.5rem 0;
-    text-decoration: none; /* Ajouté: supprime le soulignement des liens */
+    text-decoration: none;
   }
 
   .nav-links a::after {
@@ -216,7 +216,7 @@
   }
 
   .header-actions {
-    display: none; /* Cacher les boutons d'action sur mobile */
+    display: none;
   }
 
   .mobile-menu-open .header-actions {
