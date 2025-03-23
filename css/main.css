@@ -40,8 +40,9 @@
 .container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Typographie */
@@ -95,7 +96,7 @@ p {
     background-color: var(--bg-color);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
-    padding: var(--spacing-sm) 0;
+    padding: 0.5rem 0; /* Réduction du padding vertical */
 }
 
 .header-content {

@@ -17,6 +17,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      @import "~lucide-static/font/Lucide.css";
+    </style>
     <script src="js/main.js"></script>
   </head>
   <body>
@@ -27,22 +30,39 @@
           <div class="logo">
             <a href="#">Accounting App</a>
           </div>
-          <button class="mobile-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <nav class="main-nav-mobile">
-            <ul class="nav-links-mobile">
-              <li><a href="#product">En savoir plus</a></li>
-              <li><a href="#features">Fonctionnalités</a></li>
-              <li><a href="#pricing">Tarifs et plans</a></li>
-            </ul>
-            <div class="header-actions">
-              <a href="#" class="btn btn-secondary">Se connecter</a>
-              <a href="#" class="btn btn-primary">Créer un compte gratuit</a>
-            </div>
-          </nav>
+
+          <div class="display-on-pc">
+            <nav class="main-nav">
+              <ul class="nav-links">
+                <li><a href="#product">En savoir plus</a></li>
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#pricing">Tarifs et plans</a></li>
+              </ul>
+              <div class="header-actions">
+                <a href="#" class="btn btn-secondary">Se connecter</a>
+                <a href="#" class="btn btn-primary">Créer un compte gratuit</a>
+              </div>
+            </nav>
+          </div>
+
+          <div class="display-on-mobile">
+            <button class="mobile-menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <nav class="main-nav-mobile">
+              <ul class="nav-links-mobile">
+                <li><a href="#product">En savoir plus</a></li>
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#pricing">Tarifs et plans</a></li>
+              </ul>
+              <div class="header-actions">
+                <a href="#" class="btn btn-secondary">Se connecter</a>
+                <a href="#" class="btn btn-primary">Créer un compte gratuit</a>
+              </div>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
@@ -57,9 +77,9 @@
               intelligente
             </h1>
             <p>
-              L'outil comptable qui s'adapte à votre activité grâce à notre
-              technologie d'IA. Réduisez vos tâches administratives et gagnez du
-              temps sur votre comptabilité.
+              Optimisez vos opérations financières grâce à notre logiciel de
+              comptabilité intelligent en ligne. Gagnez du temps, réduisez les
+              erreurs et prenez de meilleures décisions.
             </p>
             <div class="hero-actions">
               <a href="#" class="btn btn-primary">Commencer l'essai gratuit</a>
@@ -92,22 +112,23 @@
           <div class="feature-card">
             <div class="feature-icon blue">
               <i class="fas fa-clock"></i>
+              <div class="icon-archive"></div>
             </div>
             <h3>Analyse en temps réel</h3>
             <p>
-              Visualisez les performances financières de votre entreprise
-              instantanément avec des tableaux de bord personnalisables.
+              Obtenez des informations instantanées sur les performances de
+              votre entreprise grâce à des outils de reporting avancés
             </p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon purple">
-              <i class="fas fa-robot"></i>
+            <div class="">
+              <i data-lucide="bot"></i>
             </div>
             <h3>Facturation automatisée</h3>
             <p>
-              Créez et envoyez automatiquement des factures professionnelles et
-              suivez leur statut en un clic.
+              Créez et envoyez automatiquement des factures professionnelles
+              avec suivi des paiements
             </p>
           </div>
 
@@ -117,8 +138,8 @@
             </div>
             <h3>Sécurité de niveau bancaire</h3>
             <p>
-              Vos données financières sont protégées par un cryptage de pointe
-              et des sauvegardes automatiques.
+              Vos données financières sont protégées par des mesures de sécurité
+              de niveau entreprise
             </p>
           </div>
         </div>
@@ -136,9 +157,9 @@
               <div class="testimonial-name">Michael Ngouma</div>
               <div class="testimonial-company">PDG, DigitalBen</div>
               <p class="testimonial-text">
-                "Depuis que nous utilisons Accounting App, notre gestion
-                financière a été transformée. Tout est plus facile et plus
-                clair."
+                "AccountPro a transformé notre façon de gérer nos finances. Les
+                fonctionnalités d'automatisation nous ont fait gagner un temps
+                précieux."
               </p>
             </div>
           </div>
@@ -148,9 +169,9 @@
               <div class="testimonial-name">Jessica Kone</div>
               <div class="testimonial-company">CFO, Eko Solutions</div>
               <p class="testimonial-text">
-                "La visualisation des finances en temps réel m'a permis de
-                prendre des décisions plus éclairées pour l'ensemble de
-                l'entreprise."
+                "Les fonctionnalités de reporting sont incroyables. Je peux
+                prendre de meilleures décisions commerciales grâce à des
+                informations en temps réel."
               </p>
             </div>
           </div>
@@ -160,8 +181,9 @@
               <div class="testimonial-name">David Wilson</div>
               <div class="testimonial-company">Fondateur, Tech Innov</div>
               <p class="testimonial-text">
-                "L'automatisation des factures nous a fait gagner des heures
-                chaque semaine. Un outil vraiment indispensable."
+                "Le meilleur logiciel de comptabilité que nous ayons utilisé. Le
+                support client est exceptionnel et les fonctionnalités sont
+                complètes."
               </p>
             </div>
           </div>
@@ -181,18 +203,17 @@
         <div class="pricing-grid">
           <div class="pricing-card">
             <div class="pricing-header">
-              <h3>Débutant</h3>
+              <h3>Standar</h3>
               <div class="pricing-price">
-                <span class="price">20000</span>
-                <span class="period">F CFA / mois</span>
+                <span class="price">20000 f</span>
+                <span class="period">/mois</span>
               </div>
             </div>
             <div class="pricing-features">
               <ul>
-                <li><i class="fas fa-check"></i> Tableau de bord basique</li>
-                <li><i class="fas fa-check"></i> Suivi des factures</li>
-                <li><i class="fas fa-check"></i> 2 utilisateurs</li>
-                <li><i class="fas fa-check"></i> Support par email</li>
+                <li><i class="fas fa-check"></i> Rapports de base</li>
+                <li><i class="fas fa-check"></i> Jusqu'à 100 factures</li>
+                <li><i class="fas fa-check"></i> 2 membres de l'équipe</li>
               </ul>
             </div>
             <div class="pricing-action">
@@ -203,10 +224,10 @@
           <div class="pricing-card popular">
             <div class="popular-tag">Populaire</div>
             <div class="pricing-header">
-              <h3>Professionnel</h3>
+              <h3>Professionel</h3>
               <div class="pricing-price">
-                <span class="price">100000</span>
-                <span class="period">F CFA / mois</span>
+                <span class="price">100000 f</span>
+                <span class="period">/mois</span>
               </div>
             </div>
             <div class="pricing-features">
@@ -215,10 +236,10 @@
                   <i class="fas fa-check"></i> Tout ce qui est inclus dans
                   Débutant
                 </li>
-                <li><i class="fas fa-check"></i> Tableau de bord avancé</li>
-                <li><i class="fas fa-check"></i> Rapports personnalisés</li>
-                <li><i class="fas fa-check"></i> 5 utilisateurs</li>
-                <li><i class="fas fa-check"></i> Support prioritaire</li>
+                <li><i class="fas fa-check"></i> Rapports avancés</li>
+                <li><i class="fas fa-check"></i> Factures illimitées</li>
+                <li><i class="fas fa-check"></i> 5 membres de l'équipe</li>
+                <li><i class="fas fa-check"></i> Accès API</li>
               </ul>
             </div>
             <div class="pricing-action">
@@ -230,8 +251,8 @@
             <div class="pricing-header">
               <h3>Entreprise</h3>
               <div class="pricing-price">
-                <span class="price">250000</span>
-                <span class="period">F CFA / mois</span>
+                <span class="price">250000 f</span>
+                <span class="period">/mois</span>
               </div>
             </div>
             <div class="pricing-features">
@@ -240,14 +261,16 @@
                   <i class="fas fa-check"></i> Tout ce qui est inclus dans
                   Professionnel
                 </li>
-                <li><i class="fas fa-check"></i> IA avancée</li>
-                <li><i class="fas fa-check"></i> API complète</li>
-                <li><i class="fas fa-check"></i> Utilisateurs illimités</li>
-                <li><i class="fas fa-check"></i> Support dédié 24/7</li>
+                <li><i class="fas fa-check"></i> Rapports personnalisés</li>
+                <li><i class="fas fa-check"></i> Tout illimité</li>
+                <li><i class="fas fa-check"></i> Soutien prioritaire</li>
+                <li><i class="fas fa-check"></i> Intégration personnalisée</li>
               </ul>
             </div>
             <div class="pricing-action">
-              <a href="#" class="btn btn-outline">Contacter les ventes</a>
+              <a href="#" class="btn btn-outline"
+                >Contacter le service commercial</a
+              >
             </div>
           </div>
         </div>

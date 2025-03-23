@@ -1,5 +1,5 @@
 /* Grands écrans et desktop */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 5000px) {
   .container {
     max-width: 960px;
   }
@@ -10,6 +10,74 @@
 
   .pricing-grid {
     gap: 20px;
+  }
+
+  /* Navigation principale - Corrections */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Modifié: space-between au lieu de flex-end */
+    gap: var(--spacing-lg); /* Modifié: réduction de l'espacement */
+    flex: 1;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin: 0; /* Ajouté: supprime la marge par défaut des listes */
+    padding: 0; /* Ajouté: supprime le padding par défaut des listes */
+    list-style-type: none; /* Ajouté: supprime les puces de liste */
+  }
+
+  .nav-links li {
+    margin: 0; /* Ajouté: assure qu'il n'y a pas de marge sur les éléments de liste */
+  }
+
+  .nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    text-decoration: none; /* Ajouté: supprime le soulignement des liens */
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  /* Ajout du style pour header-actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  /* Assurer que le logo et la navigation sont alignés horizontalement */
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+
+  .display-on-mobile {
+    display: none;
+  }
+
+  .display-on-pc {
+    display: block;
   }
 }
 
@@ -85,6 +153,14 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
+
+  .display-on-pc {
+    display: block;
+  }
+
+  .display-on-mobile {
+    display: none;
+  }
 }
 
 /* Mobiles et petits écrans */
@@ -95,12 +171,11 @@
   }
 
   .main-nav-mobile {
-    display: none; /* Menu principal caché sur mobile */
     position: fixed;
-    top: 60px; /* Ajustez cette valeur selon la hauteur de votre header */
+    top: 60px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 60px); /* Hauteur totale moins la hauteur du header */
+    height: calc(100vh - 60px);
     background-color: white;
     padding: 2rem;
     box-shadow: var(--shadow-sm);
@@ -129,7 +204,7 @@
 
   /* Affiche le bouton du menu mobile */
   .mobile-menu-toggle {
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -268,7 +343,7 @@
     width: 100%;
     height: 100vh;
     background-color: white;
-    padding-top: 80px; /* Espace pour le header */
+    padding-top: 80px;
     z-index: 999;
   }
 
@@ -311,6 +386,14 @@
     padding: 0.5rem 0;
     width: 100%;
   }
+
+  .display-on-mobile {
+    display: block;
+  }
+
+  .display-on-pc {
+    display: none;
+  }
 }
 
 /* Très petits écrans */
@@ -339,37 +422,7 @@
     font-size: 14px;
   }
 
-  /* Style mobile pour le menu lorsqu'il est ouvert */
-  .mobile-menu-open .main-nav-mobile {
-    display: block;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-  }
-
-  .mobile-menu-open .nav-links-mobile {
-    flex-direction: column;
-    padding: 20px 0;
-  }
-
-  .mobile-menu-open .nav-links-mobile li {
-    margin: 10px 0;
-  }
-
-  /* Assurer que les boutons dans l'en-tête sont correctement dimensionnés sur mobile */
-  .mobile-menu-open .header-actions {
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px 20px;
-  }
-
-  .mobile-menu-open .header-actions .btn {
-    margin: 5px 0;
-    width: 100%;
-    text-align: center;
+  .display-on-pc {
+    display: none;
   }
 }
