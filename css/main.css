@@ -130,8 +130,23 @@ p {
     gap: var(--spacing-sm);
 }
 
+/* Bouton menu mobile */
 .mobile-menu-toggle {
-    display: none;
+    display: none; /* Caché par défaut sur desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    padding: 0;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-dark);
+    border-radius: 3px;
+    transition: var(--transition);
 }
 
 /* Sections */

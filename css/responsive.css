@@ -34,7 +34,8 @@
     
     /* En-tête */
     .header-content {
-      flex-wrap: wrap;
+      flex-wrap: nowrap; /* Change wrap to nowrap */
+      justify-content: space-between; /* Ensure space between elements */
     }
     
     .main-nav {
@@ -111,18 +112,51 @@
     /* En-tête */
     .header-content {
       justify-content: space-between;
+      position: relative;
+      z-index: 1001; /* Assurez-vous que le bouton est au-dessus du menu */
     }
     
     .main-nav {
       display: none; /* Menu principal caché sur mobile */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .main-nav.active {
+      display: block;
     }
     
     .mobile-menu-toggle {
-      display: block; /* Afficher le bouton du menu mobile */
+      display: flex; /* Affiche le bouton sur mobile */
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1002; /* Assurez-vous que le bouton est au-dessus du menu */
     }
     
     .header-actions {
       display: none; /* Cacher les boutons d'action sur mobile */
+    }
+
+    .mobile-menu-open .header-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .mobile-menu-open .header-actions .btn {
+      width: 100%;
+      text-align: left;
     }
     
     /* Section principale (Hero) */
@@ -202,6 +236,41 @@
     
     .social-links {
       margin-top: 15px;
+    }
+
+    .mobile-menu-toggle {
+        display: flex; /* Affiche le bouton sur mobile */
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1002; /* Assurez-vous que le bouton est au-dessus du menu */
+    }
+
+    /* Animation du hamburger en X */
+    .mobile-menu-toggle.active span:first-child {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:last-child {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Style des liens dans le menu mobile */
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 1.25rem;
+      padding: 0.5rem 0;
+      width: 100%;
     }
   }
   
