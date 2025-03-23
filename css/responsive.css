@@ -170,8 +170,6 @@
     /* En-tête */
     .header-content {
       justify-content: space-between;
-      position: relative;
-      z-index: 1001; /* Assurez-vous que le bouton est au-dessus du menu */
     }
 
     .main-nav {
@@ -201,28 +199,11 @@
     }
     
     .mobile-menu-toggle {
-      display: flex; /* Affiche le bouton sur mobile */
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      z-index: 1002; /* Assurez-vous que le bouton est au-dessus du menu */
+      display: block; /* Afficher le bouton du menu mobile */
     }
     
     .header-actions {
       display: none; /* Cacher les boutons d'action sur mobile */
-    }
-
-    .mobile-menu-open .header-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .mobile-menu-open .header-actions .btn {
-      width: 100%;
-      text-align: left;
     }
     
     /* Section principale (Hero) */
