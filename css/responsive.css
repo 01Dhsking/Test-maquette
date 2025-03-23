@@ -1,404 +1,375 @@
-/* css/responsive.css - Styles responsifs pour Accounting App */
-
-/* Styles pour assurer que toutes les sections HTML sont prises en compte:
-   - En-tête (header)
-   - Section principale (hero)
-   - Section des fonctionnalités (features)
-   - Section témoignages (testimonials)
-   - Section tarification (pricing)
-   - Section CTA (cta)
-   - Pied de page (footer)
-*/
-
 /* Grands écrans et desktop */
 @media screen and (max-width: 1200px) {
-    .container {
-      max-width: 960px;
-    }
-    
-    .hero-image img {
-      max-width: 100%;
-    }
-    
-    .pricing-grid {
-      gap: 20px;
-    }
-  }
-  
-  /* Tablettes et écrans moyens */
-  @media screen and (max-width: 992px) {
-    .container {
-      max-width: 720px;
-      padding: 0 20px;
-    }
-    
-    /* En-tête */
-    .header-content {
-      flex-wrap: nowrap; /* Change wrap to nowrap */
-      justify-content: space-between; /* Ensure space between elements */
-    }
-    
-    /* Section principale (Hero) */
-    .hero-content {
-      flex-direction: column;
-    }
-    
-    .hero-text {
-      text-align: center;
-      max-width: 100%;
-      margin-bottom: 40px;
-    }
-    
-    .hero-image {
-      margin: 0 auto;
-      max-width: 80%;
-    }
-    
-    .hero-actions {
-      justify-content: center;
-    }
-    
-    /* Section des fonctionnalités */
-    .features-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-    
-    /* Section témoignages */
-    .testimonials-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    
-    /* Section tarification */
-    .pricing-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    
-    .pricing-card {
-      width: 100%;
-    }
-    
-    .pricing-card.popular {
-      grid-column: span 2;
-      max-width: 80%;
-      margin: 0 auto;
-    }
-    
-    .footer-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-
-    /* Cache la navigation desktop */
-    .main-nav {
-      display: none;
-    }
-
-    /* Affiche le bouton du menu mobile */
-    .mobile-menu-toggle {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 21px;
-      padding: 0;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .mobile-menu-toggle span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background-color: var(--text-dark);
-      border-radius: 3px;
-      transition: var(--transition);
-    }
-
-    /* Style du menu mobile */
-    .main-nav-mobile {
-      display: none;
-      position: fixed;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      height: calc(100vh - 70px);
-      background-color: var(--bg-color);
-      padding: var(--spacing-lg);
-      box-shadow: var(--shadow-sm);
-      overflow-y: auto;
-    }
-
-    .main-nav-mobile.active {
-      display: block;
-    }
-
-    .nav-links-mobile {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-md);
-    }
-
-    .nav-links-mobile a {
-      display: block;
-      padding: var(--spacing-xs) 0;
-      font-size: 1.1rem;
-    }
-
-    .main-nav-mobile .header-actions {
-      margin-top: var(--spacing-lg);
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-sm);
-    }
-
-    .main-nav-mobile .header-actions .btn {
-      width: 100%;
-    }
-  }
-  
-  /* Mobiles et petits écrans */
-  @media screen and (max-width: 768px) {
-    .container {
-      max-width: 100%;
-      padding: 0 15px;
-    }
-    
-    /* En-tête */
-    .header-content {
-      justify-content: space-between;
-    }
-
-    .main-nav {
-      display: flex;
-      gap: 1rem;
-    }
-    
-    .main-nav-mobile {
-      display: none; /* Menu principal caché sur mobile */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      padding: 2rem;
-      box-shadow: var(--shadow-sm);
-      z-index: 1000;
-      overflow-y: auto;
-      order: 3;
-      width: 100%;
-      margin-top: 15px;
-    }
-
-    .main-nav-mobile.active {
-      display: block;
-    }
-    
-    .mobile-menu-toggle {
-      display: block; /* Afficher le bouton du menu mobile */
-    }
-    
-    .header-actions {
-      display: none; /* Cacher les boutons d'action sur mobile */
-    }
-    
-    /* Section principale (Hero) */
-    .hero {
-      padding: 40px 0;
-    }
-    
-    .hero-content h1 {
-      font-size: 28px;
-      line-height: 1.3;
-    }
-    
-    .hero-content p {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-    
-    .hero-image {
-      max-width: 100%;
-    }
-    
-    /* Section des fonctionnalités */
-    .features-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    
-    .feature-card {
-      padding: 20px;
-    }
-    
-    /* Section témoignages */
-    .testimonials-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    
-    /* Section tarification */
-    .pricing-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .pricing-card.popular {
-      grid-column: 1;
-      max-width: 100%;
-    }
-    
-    .cta {
-      padding: 40px 0;
-      text-align: center;
-    }
-    
-    .cta h2 {
-      font-size: 24px;
-    }
-    
-    .cta-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .cta-buttons .btn {
-      margin: 10px 0;
-      width: 100%;
-      max-width: 300px;
-    }
-    
-    .footer-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-    
-    .footer-bottom {
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .social-links {
-      margin-top: 15px;
-    }
-
-    .mobile-menu-toggle {
-        display: flex; /* Affiche le bouton sur mobile */
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        z-index: 1002; /* Assurez-vous que le bouton est au-dessus du menu */
-    }
-
-    /* Animation du hamburger en X */
-    .mobile-menu-toggle.active span:first-child {
-        transform: translateY(9px) rotate(45deg);
-    }
-
-    .mobile-menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-menu-toggle.active span:last-child {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-
-    /* Style des liens dans le menu mobile */
-    .nav-links-mobile {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-top: 2rem;
-      justify-content: center;
-    }
-
-    .nav-links-mobile a {
-      font-size: 1.25rem;
-      padding: 0.5rem 0;
-      width: 100%;
-    }
-  }
-  
-  /* Très petits écrans */
-  @media screen and (max-width: 480px) {
-    /* Section principale (Hero) */
-    .hero-content h1 {
-      font-size: 24px;
-    }
-    
-    .section-subtitle {
-      font-size: 14px;
-    }
-    
-    /* Cartes (fonctionnalités, témoignages, tarification) */
-    .feature-card, 
-    .testimonial-card, 
-    .pricing-card {
-      padding: 15px;
-    }
-    
-    .testimonial-content {
-      padding: 15px;
-    }
-    
-    .pricing-features ul li {
-      font-size: 14px;
-    }
-    
-    /* Style mobile pour le menu lorsqu'il est ouvert */
-    .mobile-menu-open .main-nav {
-      display: block;
-      position: absolute;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      background-color: white;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      z-index: 100;
-    }
-    
-    .mobile-menu-open .nav-links {
-      flex-direction: column;
-      padding: 20px 0;
-    }
-    
-    .mobile-menu-open .nav-links li {
-      margin: 10px 0;
-    }
-    
-    /* Assurer que les boutons dans l'en-tête sont correctement dimensionnés sur mobile */
-    .mobile-menu-open .header-actions {
-      display: flex;
-      flex-direction: column;
-      padding: 0 20px 20px;
-    }
-    
-    .mobile-menu-open .header-actions .btn {
-      margin: 5px 0;
-      width: 100%;
-      text-align: center;
-    }
+  .container {
+    max-width: 960px;
   }
 
-/* Desktop Navigation */
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-lg);
+  .hero-image img {
+    max-width: 100%;
+  }
+
+  .pricing-grid {
+    gap: 20px;
+  }
 }
 
-.nav-links {
-  display: flex;
-  gap: var(--spacing-lg);
+/* Tablettes et écrans moyens */
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+    padding: 0 20px;
+  }
+
+  /* En-tête */
+  .header-content {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1001;
+  }
+
+  .nav-links-mobile {
+    justify-content: center;
+  }
+
+  /* Section principale (Hero) */
+  .hero-content {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .hero-text {
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .hero-image {
+    margin: 0 auto;
+    max-width: 80%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  /* Section des fonctionnalités */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* Section témoignages */
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Section tarification */
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .pricing-card {
+    width: 100%;
+  }
+
+  .pricing-card.popular {
+    grid-column: span 2;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }
 
-.mobile-menu-toggle {
-  display: none;
+/* Mobiles et petits écrans */
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .main-nav-mobile {
+    display: none; /* Menu principal caché sur mobile */
+    position: fixed;
+    top: 60px; /* Ajustez cette valeur selon la hauteur de votre header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px); /* Hauteur totale moins la hauteur du header */
+    background-color: white;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    z-index: 999;
+    overflow-y: auto;
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .main-nav-mobile.active {
+    display: block;
+  }
+
+  /* Ajout d'un fond sombre derrière le menu */
+  body.mobile-menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+
+  /* Affiche le bouton du menu mobile */
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .header-actions {
+    display: none; /* Cacher les boutons d'action sur mobile */
+  }
+
+  .mobile-menu-open .header-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .mobile-menu-open .header-actions .btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Section principale (Hero) */
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+  }
+
+  /* Section des fonctionnalités */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  /* Section témoignages */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Section tarification */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card.popular {
+    grid-column: 1;
+    max-width: 100%;
+  }
+
+  .cta {
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 24px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    margin-top: 15px;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-dark);
+    border-radius: 3px;
+    transition: var(--transition);
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1002;
+  }
+
+  .header {
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+  }
+
+  .main-nav-mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    padding-top: 80px; /* Espace pour le header */
+    z-index: 999;
+  }
+
+  .main-nav-mobile.active {
+    display: block;
+  }
+
+  .nav-links-mobile {
+    padding: 20px;
+  }
+
+  .mobile-menu-toggle {
+    position: relative;
+    z-index: 1001;
+  }
+
+  /* Animation du hamburger en X */
+  .mobile-menu-toggle.active span:first-child {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active span:last-child {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Style des liens dans le menu mobile */
+  .nav-links-mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .nav-links-mobile a {
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
+    width: 100%;
+  }
 }
 
-.main-nav-mobile {
-  display: none;
+/* Très petits écrans */
+@media screen and (max-width: 480px) {
+  /* Section principale (Hero) */
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+  }
+
+  /* Cartes (fonctionnalités, témoignages, tarification) */
+  .feature-card,
+  .testimonial-card,
+  .pricing-card {
+    padding: 15px;
+  }
+
+  .testimonial-content {
+    padding: 15px;
+  }
+
+  .pricing-features ul li {
+    font-size: 14px;
+  }
+
+  /* Style mobile pour le menu lorsqu'il est ouvert */
+  .mobile-menu-open .main-nav-mobile {
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  .mobile-menu-open .nav-links-mobile {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .mobile-menu-open .nav-links-mobile li {
+    margin: 10px 0;
+  }
+
+  /* Assurer que les boutons dans l'en-tête sont correctement dimensionnés sur mobile */
+  .mobile-menu-open .header-actions {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px;
+  }
+
+  .mobile-menu-open .header-actions .btn {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
 }

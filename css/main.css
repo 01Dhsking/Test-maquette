@@ -110,18 +110,18 @@ p {
     color: var(--primary-color);
 }
 
-.nav-links {
+.nav-links-mobile {
     display: flex;
     gap: var(--spacing-lg);
 }
 
-.nav-links a {
+.nav-links-mobile a {
     color: var(--text-color);
     font-weight: 500;
     transition: var(--transition);
 }
 
-.nav-links a:hover {
+.nav-links-mobile a:hover {
     color: var(--primary-color);
 }
 
