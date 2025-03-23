@@ -38,16 +38,6 @@
       justify-content: space-between; /* Ensure space between elements */
     }
     
-    .main-nav {
-      order: 3;
-      width: 100%;
-      margin-top: 15px;
-    }
-    
-    .nav-links {
-      justify-content: center;
-    }
-    
     /* Section principale (Hero) */
     .hero-content {
       flex-direction: column;
@@ -100,6 +90,74 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
+
+    /* Cache la navigation desktop */
+    .main-nav {
+      display: none;
+    }
+
+    /* Affiche le bouton du menu mobile */
+    .mobile-menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      padding: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .mobile-menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: var(--text-dark);
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+
+    /* Style du menu mobile */
+    .main-nav-mobile {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 70px);
+      background-color: var(--bg-color);
+      padding: var(--spacing-lg);
+      box-shadow: var(--shadow-sm);
+      overflow-y: auto;
+    }
+
+    .main-nav-mobile.active {
+      display: block;
+    }
+
+    .nav-links-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+
+    .nav-links-mobile a {
+      display: block;
+      padding: var(--spacing-xs) 0;
+      font-size: 1.1rem;
+    }
+
+    .main-nav-mobile .header-actions {
+      margin-top: var(--spacing-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    .main-nav-mobile .header-actions .btn {
+      width: 100%;
+    }
   }
   
   /* Mobiles et petits écrans */
@@ -115,8 +173,13 @@
       position: relative;
       z-index: 1001; /* Assurez-vous que le bouton est au-dessus du menu */
     }
-    
+
     .main-nav {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .main-nav-mobile {
       display: none; /* Menu principal caché sur mobile */
       position: fixed;
       top: 0;
@@ -128,9 +191,12 @@
       box-shadow: var(--shadow-sm);
       z-index: 1000;
       overflow-y: auto;
+      order: 3;
+      width: 100%;
+      margin-top: 15px;
     }
 
-    .main-nav.active {
+    .main-nav-mobile.active {
       display: block;
     }
     
@@ -260,14 +326,15 @@
     }
 
     /* Style des liens dans le menu mobile */
-    .nav-links {
+    .nav-links-mobile {
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
       margin-top: 2rem;
+      justify-content: center;
     }
 
-    .nav-links a {
+    .nav-links-mobile a {
       font-size: 1.25rem;
       padding: 0.5rem 0;
       width: 100%;
@@ -334,3 +401,23 @@
       text-align: center;
     }
   }
+
+/* Desktop Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+.main-nav-mobile {
+  display: none;
+}

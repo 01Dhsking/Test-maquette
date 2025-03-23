@@ -8,22 +8,21 @@ document.addEventListener('DOMContentLoaded', function() {
 // Gestion de la navigation responsive
 function initNavbar() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-toggle');
-    const navbar = document.querySelector('.main-nav');
+    const mobileNav = document.querySelector('.main-nav-mobile');
     
-    if (mobileMenuBtn && navbar) {
+    if (mobileMenuBtn && mobileNav) {
         mobileMenuBtn.addEventListener('click', function() {
-            // Ajoute la classe active au bouton pour l'animation
             this.classList.toggle('active');
-            navbar.classList.toggle('active');
+            mobileNav.classList.toggle('active');
             document.body.classList.toggle('mobile-menu-open');
         });
         
         // Ferme le menu au clic sur un lien
-        const navLinks = document.querySelectorAll('.nav-links a');
+        const navLinks = document.querySelectorAll('.nav-links-mobile a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 mobileMenuBtn.classList.remove('active');
-                navbar.classList.remove('active');
+                mobileNav.classList.remove('active');
                 document.body.classList.remove('mobile-menu-open');
             });
         });
